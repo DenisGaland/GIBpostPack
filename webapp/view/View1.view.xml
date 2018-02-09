@@ -1,0 +1,53 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="GIBpostPack.controller.View1" displayBlock="true">
+	<App>
+		<pages>
+			<Page showHeader="false" id="page" class="sapUiSizeCompact">
+				<f:Form id="FormToolbar" editable="true" ariaLabelledBy="Title1">
+					<f:toolbar>
+						<Toolbar binding="{GETPLANT>/S_T001WSet('03')}">
+							<Button icon="sap-icon://home" text="{GETPLANT>EPlant} {GETPLANT&gt;ET001w/Name1}" activeIcon="sap-icon://dropdown"/>
+							<Button text="{i18n>Reset}" type="Emphasized" press="reload" id="reseButton" visible="false"/>
+						</Toolbar>
+					</f:toolbar>
+					<f:layout>
+						<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="3" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
+							emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer ariaLabelledBy="Title2">
+							<f:formElements>
+								<f:FormElement label="{i18n>TRNR}">
+									<f:fields>
+										<SearchField id="trnr" placeholder="{i18n>EnterTRNR}" search="trnrsearch"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>CustName}">
+									<f:fields>
+										<Input type="Text" value="{ECOMBPOST>CustName}" editable="false" enabled="false"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>Street}">
+									<f:fields>
+										<Input type="Text" value="{ECOMBPOST>Stras}" editable="false" enabled="false"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>City}">
+									<f:fields>
+										<Input type="Text" value="{ECOMBPOST>City}" editable="false" enabled="false"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement id="formButton" visible="false">
+									<f:fields>
+										<Button text="{i18n>Clear}" class="sapUiTinyMargin" type="Emphasized" press="clear"/>
+										<Button text="{i18n>Save}" class="sapUiTinyMargin" type="Emphasized" press="save"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
